@@ -17,6 +17,8 @@ public class bpm_script : MonoBehaviour
 
     void Update()
     {
-        MainAS.pitch = MinMultiplier + ((MaxMultiplier - MinMultiplier) * KnobS.KnobValue);
+        float newSpeed = MinMultiplier + ((MaxMultiplier - MinMultiplier) * KnobS.KnobValue);
+        MainAS.pitch = newSpeed;
+        MainAS.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / newSpeed);
     }
 }
