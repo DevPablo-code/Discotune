@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class KnobEvent : UnityEvent<float>
+{
+
+}
 
 public class KnobHandle : MonoBehaviour
 {
+    public KnobEvent OnKnobDrag;
+
     public Text ValueText;
 
     private Transform handle;
@@ -13,7 +21,7 @@ public class KnobHandle : MonoBehaviour
 
     private float knobValue = 0.0f;
 
-    private void Start()
+    public void Start()
     {
         handle = this.transform;
     }
@@ -41,6 +49,7 @@ public class KnobHandle : MonoBehaviour
     public virtual void OnValueChanged(float NewValue)
     {
         ValueText.text = Mathf.Round(NewValue * 100.0f).ToString();
+        OnKnobDrag.Invoke(NewValue);
     }
 
     public float getLastKnobValue()
