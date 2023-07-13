@@ -6,7 +6,9 @@ public class Gun : MonoBehaviour
 {
     public GameObject crosshair;
     public GameObject flash;
-    public AudioClip ShotSound;
+    public AudioClip shotSound;
+    public GameObject bloodParticle;
+    public bool autoEquip = false;
 
     private bool _equipped;
     private AudioSource _audioSource;
@@ -16,7 +18,14 @@ public class Gun : MonoBehaviour
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
-        Equip();
+        if (autoEquip)
+        {
+            Equip();
+        }
+        else 
+        {
+            Unequip();
+        }
         flash.SetActive(false);
     }
 
@@ -51,22 +60,29 @@ public class Gun : MonoBehaviour
         _equipped = false;
     }
 
-    public GameObject Shoot() 
+    public void Shoot() 
     {
         if (_equipped) 
         {
             if (_audioSource != null) 
             {
-                _audioSource.PlayOneShot(ShotSound);
+                _audioSource.PlayOneShot(shotSound);
 
                 Flash();
 
                 RaycastHit2D hit = Physics2D.Raycast(_shootAtPosition, Vector2.zero);
 
-                return hit.transform.gameObject;
+                if (hit.collider != null) 
+                {
+                    Vector2 blooParticlePosition = new Vector2(hit.collider.bounds.center.x + Random.Range(-0.4f, 0.4f), hit.collider.bounds.min.y + Random.Range(-0.4f, 0.4f));
+                    hit.transform.gameObject.SetActive(false);
+
+                    GameObject spawnedBlood = Instantiate(bloodParticle, blooParticlePosition, Quaternion.identity);
+                    spawnedBlood.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.4f, 1f), 0f, 0f, 1.0f);
+                    spawnedBlood.transform.Rotate(Random.Range(0f, 30f), 0, Random.Range(-5f, 5f), Space.Self);
+                }
             }
         }
-        return null;
     }
 
     private void Flash() 
