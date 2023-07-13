@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -8,16 +9,19 @@ public class Gun : MonoBehaviour
     public GameObject flash;
     public AudioClip shotSound;
     public GameObject bloodParticle;
+    public float HideTimeout = 5f;
     public bool autoEquip = false;
 
     private bool _equipped;
-    private AudioSource _audioSource;
+    public AudioSource _audioSource;
     private Vector2 _shootAtPosition;
+    private float shootTime = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+
         if (autoEquip)
         {
             Equip();
@@ -26,7 +30,9 @@ public class Gun : MonoBehaviour
         {
             Unequip();
         }
+
         flash.SetActive(false);
+        gameObject.GetComponent<Image>().enabled = false;
     }
 
     // Called every frame
@@ -43,6 +49,11 @@ public class Gun : MonoBehaviour
                 crosshair.transform.position = Vector2.Lerp(crosshair.transform.position, Input.mousePosition, 5f * Time.deltaTime);
                 _shootAtPosition = Camera.main.ScreenToWorldPoint(crosshair.transform.position);
             }
+        }
+
+        if((Time.fixedTime - shootTime) >= HideTimeout)
+        {
+            gameObject.GetComponent<Image>().enabled = false;
         }
     }
 
@@ -66,6 +77,10 @@ public class Gun : MonoBehaviour
         {
             if (_audioSource != null) 
             {
+                shootTime = Time.fixedTime;
+
+                gameObject.GetComponent<Image>().enabled = true;
+
                 _audioSource.PlayOneShot(shotSound);
 
                 Flash();
