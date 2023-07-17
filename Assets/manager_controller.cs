@@ -45,11 +45,6 @@ public class manager_controller : MonoBehaviour
         VolumeHandle.OnValueChanged(0.0f);
     }
 
-    void Update()
-    {
-        
-    }
-
     private void OnEnergyChanged(float Val)
     {
         MainAS.clip = TrackList[(int)Val].TrackSource; ;
@@ -68,4 +63,10 @@ public class manager_controller : MonoBehaviour
     {
         MainAS.volume = MinVolume + ((MaxVolume - MinVolume) * Val);
     }
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(10, 0, 150, 150), "Energy: ");
+        GUI.Label(new Rect(10, 20, 150, 150), "Volume: ");
+    }
+
 }
