@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     public AudioClip shotSound;
     public GameObject bloodParticle;
     public float HideTimeout = 5f;
+    public float FlashTime = 0.2f;
     public bool autoEquip = false;
 
     private bool _equipped;
@@ -22,17 +23,16 @@ public class Gun : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
 
-        if (autoEquip)
+        gameObject.GetComponent<Image>().enabled = false;
+
+        if(autoEquip)
         {
             Equip();
         }
-        else 
+        else
         {
             Unequip();
         }
-
-        flash.SetActive(false);
-        gameObject.GetComponent<Image>().enabled = false;
     }
 
     // Called every frame
@@ -51,6 +51,10 @@ public class Gun : MonoBehaviour
             }
         }
 
+        if((Time.fixedTime - shootTime) >= FlashTime) 
+        {
+            flash.SetActive(false);
+        }
         if((Time.fixedTime - shootTime) >= HideTimeout)
         {
             gameObject.GetComponent<Image>().enabled = false;
@@ -59,14 +63,12 @@ public class Gun : MonoBehaviour
 
     public void Equip() 
     {
-        this.gameObject.SetActive(true);
         crosshair.SetActive(true);
         _equipped = true;
     }
 
     public void Unequip()
     {
-        this.gameObject.SetActive(false);
         crosshair.SetActive(false);
         _equipped = false;
     }
@@ -75,39 +77,29 @@ public class Gun : MonoBehaviour
     {
         if (_equipped) 
         {
-            if (_audioSource != null) 
+            if (_audioSource != null)
             {
-                shootTime = Time.fixedTime;
-
-                gameObject.GetComponent<Image>().enabled = true;
-
                 _audioSource.PlayOneShot(shotSound);
+            }
 
-                Flash();
+            shootTime = Time.fixedTime;
 
-                RaycastHit2D hit = Physics2D.Raycast(_shootAtPosition, Vector2.zero);
+            gameObject.GetComponent<Image>().enabled = true;
 
-                if (hit.collider != null) 
-                {
-                    Vector2 blooParticlePosition = new Vector2(hit.collider.bounds.center.x + Random.Range(-0.4f, 0.4f), hit.collider.bounds.min.y + Random.Range(-0.4f, 0.4f));
-                    hit.transform.gameObject.SetActive(false);
 
-                    GameObject spawnedBlood = Instantiate(bloodParticle, blooParticlePosition, Quaternion.identity);
-                    spawnedBlood.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.4f, 1f), 0f, 0f, 1.0f);
-                    spawnedBlood.transform.Rotate(Random.Range(0f, 30f), 0, Random.Range(-5f, 5f), Space.Self);
-                }
+            flash.SetActive(true);
+
+            RaycastHit2D hit = Physics2D.Raycast(_shootAtPosition, Vector2.zero);
+
+            if (hit.collider != null) 
+            {
+                Vector2 blooParticlePosition = new Vector2(hit.collider.bounds.center.x + Random.Range(-0.4f, 0.4f), hit.collider.bounds.min.y + Random.Range(-0.4f, 0.4f));
+                hit.transform.gameObject.SetActive(false);
+
+                GameObject spawnedBlood = Instantiate(bloodParticle, blooParticlePosition, Quaternion.identity);
+                spawnedBlood.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.4f, 1f), 0f, 0f, 1.0f);
+                spawnedBlood.transform.Rotate(Random.Range(0f, 30f), 0, Random.Range(-5f, 5f), Space.Self);
             }
         }
-    }
-
-    private void Flash() 
-    {
-        flash.SetActive(true);
-        Invoke("HideFlash", 0.2f);
-    }
-
-    private void HideFlash() 
-    {
-        flash.SetActive(false);
     }
 }
