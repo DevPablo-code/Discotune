@@ -34,6 +34,9 @@ public class manager_controller : MonoBehaviour
     public float MinVolume = 0.1f;
     public float MaxVolume = 1.0f;
 
+    private float currentVolume = 0.0f;
+    private float currentEnergy = 0.0f;
+
     void Start()
     {
         EnergyHandle.OnKnobDrag.AddListener(OnEnergyChanged);
@@ -45,10 +48,22 @@ public class manager_controller : MonoBehaviour
         VolumeHandle.OnValueChanged(0.0f);
     }
 
+    public float GetCurrentVolume()
+    {
+        return currentVolume;
+    }
+
+    public float GetCurrentEnergy()
+    {
+        return currentEnergy;
+    }
+
     private void OnEnergyChanged(float Val)
     {
-        MainAS.clip = TrackList[(int)Val].TrackSource; ;
+        MainAS.clip = TrackList[(int)Val].TrackSource;
         MainAS.Play();
+
+        computeEnergy();
     }
 
     private void OnBPMChanged(float Val)
@@ -57,16 +72,30 @@ public class manager_controller : MonoBehaviour
         MainAS.pitch = bpm;
         MainAS.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / bpm);
 
+        computeEnergy();
     }
 
     private void OnVolumeChanged(float Val)
     {
-        MainAS.volume = MinVolume + ((MaxVolume - MinVolume) * Val);
-    }
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(10, 0, 150, 150), "Energy: ");
-        GUI.Label(new Rect(10, 20, 150, 150), "Volume: ");
+        float volumeNorm = MinVolume + ((MaxVolume - MinVolume) * Val);
+        MainAS.volume = currentVolume;
+
+        currentVolume = Mathf.Round(volumeNorm * 100f);
     }
 
+    private void computeEnergy()
+    {
+        //ENERGY COMPUTATION HAPPENS HERE
+        //
+        //
+        float bpm = MinBPM + ((MaxBPM - MinBPM) * BPmHandle.getLastKnobValue());
+        float energyTypeMult = ((EnergyKnobHandler)EnergyHandle).CurrentEnergy == TrackEnergy.LOW ? 0.5f : 1.0f;
+        currentEnergy = Mathf.Round(bpm * 100f * energyTypeMult);
+    }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(10, 0, 150, 150), "Energy: " + currentEnergy.ToString());
+        GUI.Label(new Rect(10, 20, 150, 150), "Volume: " + currentVolume.ToString());
+    }
 }

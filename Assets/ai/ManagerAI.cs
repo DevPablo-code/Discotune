@@ -16,6 +16,7 @@ public enum RequestState
 
 public enum RequestType
 {
+    NONE,
     MUSIC_TOO_LOUD = 0,
     MUSIC_TOO_QUIET,
     MUSIC_TOO_SLOW,
@@ -37,9 +38,13 @@ public class ManagerAI : MonoBehaviour
     public float GlobalDelayBetweenRoam = 1f;
     public float GlobalRoamDistanceDivide = 5f;
 
+    public float TolerateAIRequire = 15f;
+    public float FirstStageWarningTime = 15f;
+    public float SecondStageWarningTime = 5f;
+
     public RequestIcon[] IconsList;
 
-    private Dictionary<RequestType, Sprite> iconsLookupByType = new Dictionary<RequestType, Sprite>();
+    public Dictionary<RequestType, Sprite> iconsLookupByType = new Dictionary<RequestType, Sprite>();
 
     private void Start()
     {

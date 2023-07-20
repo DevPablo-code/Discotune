@@ -5,6 +5,8 @@ using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 public class EnergyKnobHandler : KnobHandle
 {
+    public TrackEnergy CurrentEnergy = TrackEnergy.LOW;
+
     private manager_controller managerController;
 
     public void Awake()
@@ -17,6 +19,7 @@ public class EnergyKnobHandler : KnobHandle
         float val = Mathf.Round(((NewValue * 100.0f) / (100.0f / (managerController.TrackList.Length - 1))));
         OnKnobDrag.Invoke(val);
 
-        ValueText.text = managerController.TrackList[(int)val].Energy.ToString();
+        CurrentEnergy = managerController.TrackList[(int)val].Energy;
+        ValueText.text = CurrentEnergy.ToString();
     }
 }
