@@ -32,8 +32,6 @@ public class RequestIcon
 
 public class ManagerAI : MonoBehaviour
 {
-    public BoxCollider2D AreaCollide;
-
     public float GlobalSpeed = 5.0f;
     public float GlobalDelayBetweenRoam = 1f;
     public float GlobalRoamDistanceDivide = 5f;
@@ -56,15 +54,17 @@ public class ManagerAI : MonoBehaviour
 
     public Vector3 GetRoamPoint(Vector3 Origin)
     {
-        Bounds bounds = AreaCollide.bounds;
+        float width = Screen.width;
+        float height = Screen.height * 0.5f;
 
-        Vector3 boundsVector = new Vector3(
-            Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(bounds.min.y, bounds.max.y),
-           0);
+        float randW = Random.RandomRange(20, width - 20);
+        float randH = Random.RandomRange(Screen.height - 30, height);
 
-        Vector3 diff = boundsVector - Origin;
+        Vector3 screenPoint = new Vector3(randW, randH, 0);
 
-        return Vector3.Normalize(diff) * (diff.magnitude / GlobalRoamDistanceDivide);
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(screenPoint);
+        worldPoint.z = 0;
+
+        return worldPoint;
     }
 }
