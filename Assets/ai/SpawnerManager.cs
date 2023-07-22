@@ -1,6 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using System;
+using Random = System.Random;
+
+public class HumanRequire
+{
+    public float RequiredEnergy;
+    public float RequiredVolume;
+}
 
 public class SpawnerManager : MonoBehaviour
 {
@@ -10,14 +19,43 @@ public class SpawnerManager : MonoBehaviour
 
     public float WaveDelay = 15f;
 
+    public float PercentOfNonConformists = 0.25f;
+
+    public AnimationCurve SpawnDistribution;
+
     public GameObject PrefabHumanAI;
 
-    private Camera MainCam;
+    private GameObject spawnParent;
+
+    private List<HumanRequire> RequiresList = new List<HumanRequire>();
 
     void Start()
     {
-        MainCam = FindObjectOfType<Camera>();
+        spawnParent = new GameObject("HUMANS");
 
+        manager_controller djC = FindObjectOfType<manager_controller>();
+
+        for(int i = 1; i <= MaxHumans; ++i)
+        {
+            HumanRequire r = new HumanRequire();
+
+            if (((float)i / MaxHumans) <= (1f - PercentOfNonConformists))
+            {
+                r.RequiredEnergy = 75;
+                r.RequiredVolume = 75;
+            }
+            else
+            {
+                r.RequiredEnergy = UnityEngine.Random.RandomRange(10, 100);
+                r.RequiredVolume = UnityEngine.Random.RandomRange(10, 100);
+            }
+
+            RequiresList.Add(r);
+        }
+        
+        Random rng = new Random();
+        RequiresList = RequiresList.OrderBy(x => rng.Next()).ToList();
+        
         spawnWaves();
     }
 
@@ -28,28 +66,59 @@ public class SpawnerManager : MonoBehaviour
 
     IEnumerator spawnWavesImpl()
     {
+        int objectsPerWave = Mathf.RoundToInt((float)MaxHumans / WavesCount);
+        int objectsSpawned = 0;
+
         for (int i = 0; i < WavesCount; ++i)
         {
-            int objectsCount = (int)Mathf.Round(MaxHumans / WavesCount);
-            for(int o = 0; o < objectsCount; ++o)
+            float spawnRate = SpawnDistribution.Evaluate((float)objectsSpawned / MaxHumans);
+
+            int objectsToSpawnInWave = Mathf.RoundToInt(spawnRate * objectsPerWave);
+
+            int os = 0;
+            for (; os < objectsToSpawnInWave; ++os)
             {
-                spawnHuman();
+                if (os + objectsSpawned > MaxHumans)
+                {
+                    --os;
+                    break;
+                }
+
+                spawnHuman(RequiresList[objectsSpawned]);
+
+                objectsSpawned++;
             }
+
+            Debug.Log("Human spawned in " + i.ToString() + " waves: " + os.ToString());
 
             yield return new WaitForSeconds(WaveDelay);
         }
+
+        for(int i = 0; i < MaxHumans - objectsSpawned; ++i)
+        {
+            spawnHuman(RequiresList[objectsSpawned]);
+
+            objectsSpawned++;
+        }
+        Debug.Log("Last wave: " + (MaxHumans - objectsSpawned).ToString());
+
     }
 
-    private void spawnHuman()
+    private void spawnHuman(HumanRequire r)
     {
         Vector3 spawnPos = Vector3.zero;
 
-        spawnPos.x = Random.RandomRange(0, Screen.width);
+        spawnPos.x = UnityEngine.Random.RandomRange(0, Screen.width);
         spawnPos.y = Screen.height + 20f;
 
-        spawnPos = MainCam.ScreenToWorldPoint(spawnPos);
+        spawnPos = Camera.main.ScreenToWorldPoint(spawnPos);
         spawnPos.z = 0f;
 
-        Instantiate(PrefabHumanAI, spawnPos, Quaternion.identity); ;
+        GameObject go = Instantiate(PrefabHumanAI, spawnParent.transform);
+        go.transform.position = spawnPos;
+
+        DanceFloorHumanAI human = go.GetComponent<DanceFloorHumanAI>();
+        human.RequiredEnergy = r.RequiredEnergy;
+        human.RequiredVolume = r.RequiredVolume;
     }
 }

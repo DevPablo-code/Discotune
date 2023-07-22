@@ -1326,8 +1326,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHumans: 25
-  WavesCount: 3
-  WaveDelay: 15
+  WavesCount: 10
+  WaveDelay: 5
+  PercentOfNonConformists: 0.25
+  SpawnDistribution:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.007852212
+      value: 1.4223602
+      inSlope: -3.858623
+      outSlope: -3.858623
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: -0.0030866489
+      value: 1.4039717
+      inSlope: -4.5806046
+      outSlope: -4.5806046
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.06466134
+      value: 1.0447321
+      inSlope: -0.27868453
+      outSlope: -0.27868453
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.4021278
+      outWeight: 0.165956
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.047824487
+      outSlope: -0.047824487
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   PrefabHumanAI: {fileID: 1307834572917154757, guid: eb7bdc5888fcdea4e91c8b0a5d4cd0fc, type: 3}
 --- !u!4 &1272382160
 Transform:

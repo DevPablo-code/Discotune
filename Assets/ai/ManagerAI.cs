@@ -55,7 +55,7 @@ public class ManagerAI : MonoBehaviour
     public Vector3 GetRoamPoint(Vector3 Origin)
     {
         float width = Screen.width;
-        float height = Screen.height * 0.5f;
+        float height = Screen.height * 0.35f;
 
         float randW = Random.RandomRange(20, width - 20);
         float randH = Random.RandomRange(Screen.height - 30, height);
