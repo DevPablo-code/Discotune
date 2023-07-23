@@ -8,10 +8,10 @@ public class Gun : MonoBehaviour
     public GameObject crosshair;
     public GameObject flash;
     public AudioClip shotSound;
-    public GameObject bloodParticle;
     public float HideTimeout = 5f;
     public float FlashTime = 0.2f;
     public bool autoEquip = false;
+    public float damage = 50f;
 
     private bool _equipped;
     public AudioSource _audioSource;
@@ -93,12 +93,10 @@ public class Gun : MonoBehaviour
 
             if (hit.collider != null) 
             {
-                Vector2 blooParticlePosition = new Vector2(hit.collider.bounds.center.x + Random.Range(-0.4f, 0.4f), hit.collider.bounds.min.y + Random.Range(-0.4f, 0.4f));
-                hit.transform.gameObject.SetActive(false);
-
-                GameObject spawnedBlood = Instantiate(bloodParticle, blooParticlePosition, Quaternion.identity);
-                spawnedBlood.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.4f, 1f), 0f, 0f, 1.0f);
-                spawnedBlood.transform.Rotate(Random.Range(0f, 30f), 0, Random.Range(-5f, 5f), Space.Self);
+                if(hit.transform.gameObject.TryGetComponent<DanceFloorHumanAI>(out DanceFloorHumanAI target)) 
+                {
+                    target.TakeDamage(damage);
+                }  
             }
         }
     }
