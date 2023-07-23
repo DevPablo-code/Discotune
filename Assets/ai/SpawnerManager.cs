@@ -89,7 +89,7 @@ public class SpawnerManager : MonoBehaviour
                 objectsSpawned++;
             }
 
-            Debug.Log("Human spawned in " + i.ToString() + " waves: " + os.ToString());
+            //Debug.Log("Human spawned in " + i.ToString() + " waves: " + os.ToString());
 
             yield return new WaitForSeconds(WaveDelay);
         }
@@ -100,7 +100,7 @@ public class SpawnerManager : MonoBehaviour
 
             objectsSpawned++;
         }
-        Debug.Log("Last wave: " + (MaxHumans - objectsSpawned).ToString());
+        //Debug.Log("Last wave: " + (MaxHumans - objectsSpawned).ToString());
 
     }
 

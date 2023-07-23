@@ -101,7 +101,8 @@ public class DanceFloorHumanAI : MonoBehaviour
 
             this.GetComponent<SpriteRenderer>().color = Color.red;
 
-            //KILLING BEHAVIOUR MUST TURN ON HERE
+            this.GetComponent<AngryDanceFloorHumanAI>().enabled = true;
+            Destroy(this.GetComponent<DanceFloorHumanAI>());
         }
     }
 

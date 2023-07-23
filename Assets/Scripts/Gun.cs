@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     public float damage = 50f;
 
     private bool _equipped;
-    public AudioSource _audioSource;
+    private AudioSource _audioSource;
     private Vector2 _shootAtPosition;
     private float shootTime = 0.0f;
 
@@ -93,6 +93,7 @@ public class Gun : MonoBehaviour
 
             if (hit.collider != null) 
             {
+                Debug.Log(hit.transform.gameObject.name);
                 if(hit.transform.gameObject.TryGetComponent<DanceFloorHumanAI>(out DanceFloorHumanAI target)) 
                 {
                     target.TakeDamage(damage);

@@ -8,7 +8,7 @@ public class AngryDanceFloorHumanAI : DanceFloorHumanAI
     public float attackCooldown = 2.0f;
     public float attackDamage = 50f;
     public AudioClip attackSound;
-    public AudioSource _audioSource;
+    private AudioSource _audioSource;
 
     private ManagerAI aiManager;
     private DanceFloorHumanAI attackTarget;
@@ -25,11 +25,8 @@ public class AngryDanceFloorHumanAI : DanceFloorHumanAI
         ChooseAttackTarget();
 
         canAttack = true;
-
-        GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f, 1f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!attackTarget)
