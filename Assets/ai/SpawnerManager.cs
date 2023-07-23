@@ -25,13 +25,19 @@ public class SpawnerManager : MonoBehaviour
 
     public GameObject PrefabHumanAI;
 
+    public String humanSpritesheetPath;
+
     private GameObject spawnParent;
 
     private List<HumanRequire> RequiresList = new List<HumanRequire>();
 
+    private Sprite[] humansSprites;
+
     void Start()
     {
         spawnParent = new GameObject("HUMANS");
+
+        humansSprites = Resources.LoadAll<Sprite>(humanSpritesheetPath);
 
         manager_controller djC = FindObjectOfType<manager_controller>();
 
@@ -120,5 +126,6 @@ public class SpawnerManager : MonoBehaviour
         DanceFloorHumanAI human = go.GetComponent<DanceFloorHumanAI>();
         human.RequiredEnergy = r.RequiredEnergy;
         human.RequiredVolume = r.RequiredVolume;
+        human.GetComponent<SpriteRenderer>().sprite = humansSprites[UnityEngine.Random.RandomRange(0, humansSprites.Length - 1)];
     }
 }

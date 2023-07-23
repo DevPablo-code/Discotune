@@ -1372,6 +1372,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   PrefabHumanAI: {fileID: 1307834572917154757, guid: eb7bdc5888fcdea4e91c8b0a5d4cd0fc, type: 3}
+  humanSpritesheetPath: Sprites/People
 --- !u!4 &1272382160
 Transform:
   m_ObjectHideFlags: 0
