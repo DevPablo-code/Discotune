@@ -161,7 +161,7 @@ public class DanceFloorHumanAI : MonoBehaviour
     {
         return ((a - b) < 0 ? ((a - b) * -1) : (a - b)) <= threshold;
     }
-    private void Die() 
+    private void Die(bool gun = false) 
     {
         Bounds bounds = GetComponent<Collider2D>().bounds;
         Vector2 blooParticlePosition = new Vector2(bounds.center.x + Random.Range(-0.4f, 0.4f), bounds.min.y + Random.Range(-0.4f, 0.4f));
@@ -170,16 +170,33 @@ public class DanceFloorHumanAI : MonoBehaviour
         GameObject spawnedBlood = Instantiate(bloodParticle, blooParticlePosition, Quaternion.identity);
         spawnedBlood.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.4f, 1f), 0f, 0f, 1.0f);
         spawnedBlood.transform.Rotate(Random.Range(0f, 30f), 0, Random.Range(-5f, 5f), Space.Self);
+        spawnedBlood.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+        FindObjectOfType<WinManager>().Killed(gun);
 
         Destroy(gameObject);
     }
 
-    public void TakeDamage(float damageAmount) 
+    public void TakeDamage(float damageAmount, bool gun = false) 
     {
         _health -= damageAmount;
         if(_health <= 0) 
         {
-            Die();
+            //Disable fine for killing killer   
+            if(gun)
+            {
+                if(requestState == RequestState.KILLING)
+                {
+                    gun = false;
+                }
+            }
+
+            Die(gun);
         }
+    }
+
+    public RequestState GetRequestState()
+    {
+        return requestState;
     }
 }

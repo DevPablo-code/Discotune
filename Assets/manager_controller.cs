@@ -95,7 +95,7 @@ public class manager_controller : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 0, 150, 150), "Energy: " + currentEnergy.ToString());
-        GUI.Label(new Rect(10, 20, 150, 150), "Volume: " + currentVolume.ToString());
+        //GUI.Label(new Rect(10, 0, 150, 150), "Energy: " + currentEnergy.ToString());
+        //GUI.Label(new Rect(10, 20, 150, 150), "Volume: " + currentVolume.ToString());
     }
 }

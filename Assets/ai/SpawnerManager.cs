@@ -33,6 +33,8 @@ public class SpawnerManager : MonoBehaviour
 
     private Sprite[] humansSprites;
 
+    private bool lastWaveSpawned = false;
+
     void Start()
     {
         spawnParent = new GameObject("HUMANS");
@@ -41,14 +43,17 @@ public class SpawnerManager : MonoBehaviour
 
         manager_controller djC = FindObjectOfType<manager_controller>();
 
-        for(int i = 1; i <= MaxHumans; ++i)
+        float defaultEnergy = UnityEngine.Random.RandomRange(10, 100);
+        float defaultVolume = UnityEngine.Random.RandomRange(10, 100);
+
+        for (int i = 1; i <= MaxHumans; ++i)
         {
             HumanRequire r = new HumanRequire();
 
             if (((float)i / MaxHumans) <= (1f - PercentOfNonConformists))
             {
-                r.RequiredEnergy = 75;
-                r.RequiredVolume = 75;
+                r.RequiredEnergy = defaultEnergy;
+                r.RequiredVolume = defaultVolume;
             }
             else
             {
@@ -106,6 +111,9 @@ public class SpawnerManager : MonoBehaviour
 
             objectsSpawned++;
         }
+
+        lastWaveSpawned = true;
+
         //Debug.Log("Last wave: " + (MaxHumans - objectsSpawned).ToString());
 
     }
@@ -127,5 +135,10 @@ public class SpawnerManager : MonoBehaviour
         human.RequiredEnergy = r.RequiredEnergy;
         human.RequiredVolume = r.RequiredVolume;
         human.GetComponent<SpriteRenderer>().sprite = humansSprites[UnityEngine.Random.RandomRange(0, humansSprites.Length - 1)];
+    }
+
+    public bool IsLastWaveSpawned()
+    {
+        return lastWaveSpawned;
     }
 }
