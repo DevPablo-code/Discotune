@@ -144,7 +144,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6257752785190092543
 CanvasRenderer:
@@ -277,10 +277,11 @@ MonoBehaviour:
   crosshair: {fileID: 6257752785190092480}
   flash: {fileID: 6257752784239832057}
   shotSound: {fileID: 8300000, guid: 1512558933e7c3e42a9b8081dab2bfb7, type: 3}
-  bloodParticle: {fileID: 6659889039305227060, guid: 6a10bca5437e019489e3ddd2b7283853, type: 3}
   HideTimeout: 1.2
+  FlashTime: 0.2
   autoEquip: 1
-  _audioSource: {fileID: 0}
+  damage: 50
+  aimSensitivity: 1
 --- !u!82 &6257752785925876320
 AudioSource:
   m_ObjectHideFlags: 0

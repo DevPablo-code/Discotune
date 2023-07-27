@@ -12,6 +12,7 @@ public class Gun : MonoBehaviour
     public float FlashTime = 0.2f;
     public bool autoEquip = false;
     public float damage = 50f;
+    public bool crosshairDelay = false;
 
     private bool _equipped;
     private AudioSource _audioSource;
@@ -46,7 +47,15 @@ public class Gun : MonoBehaviour
             }
             else 
             {
-                crosshair.transform.position = Vector2.Lerp(crosshair.transform.position, Input.mousePosition, 5f * Time.deltaTime);
+                if (crosshairDelay) 
+                {
+                    crosshair.transform.position = Vector2.Lerp(crosshair.transform.position, Input.mousePosition, 5f * Time.deltaTime);
+                }
+                else 
+                {
+                    crosshair.transform.position = Input.mousePosition;
+                }
+               
                 _shootAtPosition = Camera.main.ScreenToWorldPoint(crosshair.transform.position);
             }
         }
@@ -64,12 +73,14 @@ public class Gun : MonoBehaviour
     public void Equip() 
     {
         crosshair.SetActive(true);
+        Cursor.visible = false;
         _equipped = true;
     }
 
     public void Unequip()
     {
         crosshair.SetActive(false);
+        Cursor.visible = true;
         _equipped = false;
     }
 
@@ -94,7 +105,7 @@ public class Gun : MonoBehaviour
             if (hit.collider != null) 
             {
                 Debug.Log(hit.transform.gameObject.name);
-                if(hit.transform.gameObject.TryGetComponent<DanceFloorHumanAI>(out DanceFloorHumanAI target)) 
+                if(hit.transform.gameObject.TryGetComponent(out DanceFloorHumanAI target)) 
                 {
                     target.TakeDamage(damage, true);
                 }  
