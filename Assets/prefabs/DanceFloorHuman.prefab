@@ -105,7 +105,12 @@ MonoBehaviour:
   ChatInfoSprite: {fileID: 473610874268160021}
   RequiredVolume: 75
   RequiredEnergy: 75
-  bloodParticle: {fileID: 6659889039305227060, guid: 6a10bca5437e019489e3ddd2b7283853, type: 3}
+  bloodParticlePrefab: {fileID: 6659889039305227060, guid: 6a10bca5437e019489e3ddd2b7283853, type: 3}
+  bloodSplashPrefab: {fileID: 6659889039305227060, guid: a086bc5b59e293b419b2f0fe6eff6438, type: 3}
+  bloodSplashSprites:
+  - {fileID: 21300000, guid: e8ec77587897da349a26ec203b283846, type: 3}
+  - {fileID: 21300000, guid: 6527d814ce5b7f841905bbc9e974da00, type: 3}
+  - {fileID: 21300000, guid: 6527d814ce5b7f841905bbc9e974da00, type: 3}
   _health: 100
 --- !u!114 &5649569303465034865
 MonoBehaviour:
@@ -123,7 +128,12 @@ MonoBehaviour:
   ChatInfoSprite: {fileID: 473610874268160021}
   RequiredVolume: 75
   RequiredEnergy: 75
-  bloodParticle: {fileID: 6659889039305227060, guid: 6a10bca5437e019489e3ddd2b7283853, type: 3}
+  bloodParticlePrefab: {fileID: 6659889039305227060, guid: 6a10bca5437e019489e3ddd2b7283853, type: 3}
+  bloodSplashPrefab: {fileID: 6659889039305227060, guid: a086bc5b59e293b419b2f0fe6eff6438, type: 3}
+  bloodSplashSprites:
+  - {fileID: 21300000, guid: e8ec77587897da349a26ec203b283846, type: 3}
+  - {fileID: 21300000, guid: 6527d814ce5b7f841905bbc9e974da00, type: 3}
+  - {fileID: 21300000, guid: 840dfbc682c437148b00a0857e9ff9e3, type: 3}
   _health: 100
   attackCooldown: 2
   attackDamage: 50

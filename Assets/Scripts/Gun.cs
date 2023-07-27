@@ -107,7 +107,7 @@ public class Gun : MonoBehaviour
                 Debug.Log(hit.transform.gameObject.name);
                 if(hit.transform.gameObject.TryGetComponent(out DanceFloorHumanAI target)) 
                 {
-                    target.TakeDamage(damage, true);
+                    target.TakeDamage(damage, true, hit);
                 }  
             }
         }

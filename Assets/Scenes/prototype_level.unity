@@ -3974,7 +3974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6257752785925876323, guid: 5cfd6c5be15fbe148bd98c84b2a0acf4, type: 3}
       propertyPath: damage
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6257752785925876325, guid: 5cfd6c5be15fbe148bd98c84b2a0acf4, type: 3}
       propertyPath: m_RaycastTarget

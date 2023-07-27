@@ -12,7 +12,9 @@ public class DanceFloorHumanAI : MonoBehaviour
     public float RequiredEnergy = 75f;
 
 
-    public GameObject bloodParticle;
+    public GameObject bloodParticlePrefab;
+    public GameObject bloodSplashPrefab;
+    public Sprite[] bloodSplashSprites;
 
     public float health
     {
@@ -167,7 +169,7 @@ public class DanceFloorHumanAI : MonoBehaviour
         Vector2 blooParticlePosition = new Vector2(bounds.center.x + Random.Range(-0.4f, 0.4f), bounds.min.y + Random.Range(-0.4f, 0.4f));
         gameObject.SetActive(false);
 
-        GameObject spawnedBlood = Instantiate(bloodParticle, blooParticlePosition, Quaternion.identity);
+        GameObject spawnedBlood = Instantiate(bloodParticlePrefab, blooParticlePosition, Quaternion.identity);
         spawnedBlood.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.4f, 1f), 0f, 0f, 1.0f);
         spawnedBlood.transform.Rotate(Random.Range(0f, 30f), 0, Random.Range(-5f, 5f), Space.Self);
         spawnedBlood.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
@@ -177,7 +179,7 @@ public class DanceFloorHumanAI : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void TakeDamage(float damageAmount, bool gun = false) 
+    public void TakeDamage(float damageAmount, bool gun = false, RaycastHit2D? hitInfo = null)
     {
         _health -= damageAmount;
         if(_health <= 0) 
@@ -193,6 +195,30 @@ public class DanceFloorHumanAI : MonoBehaviour
 
             Die(gun);
         }
+        else 
+        {
+            if (hitInfo != null)
+            {
+                SpawnBloodSplash(hitInfo.Value);
+            }
+        }
+    }
+
+    private void SpawnBloodSplash(RaycastHit2D hitInfo) 
+    {
+        StartCoroutine(SpawnBloodSphlashImpl(hitInfo));
+    }
+
+    IEnumerator SpawnBloodSphlashImpl(RaycastHit2D hitInfo) 
+    {
+        GameObject spawnedBlood = Instantiate(bloodSplashPrefab, hitInfo.point, Quaternion.identity);
+        SpriteRenderer spawnedBloodRenderer = spawnedBlood.GetComponent<SpriteRenderer>();
+        spawnedBloodRenderer.sprite = bloodSplashSprites[Random.Range(0, bloodSplashSprites.Length)];
+        spawnedBlood.transform.Rotate(0, 0, Random.Range(-5f, 5f), Space.Self);
+
+        yield return new WaitForSeconds(0.2f);
+
+        Destroy(spawnedBlood);
     }
 
     public RequestState GetRequestState()

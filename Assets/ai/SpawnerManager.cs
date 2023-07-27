@@ -134,7 +134,7 @@ public class SpawnerManager : MonoBehaviour
         DanceFloorHumanAI human = go.GetComponent<DanceFloorHumanAI>();
         human.RequiredEnergy = r.RequiredEnergy;
         human.RequiredVolume = r.RequiredVolume;
-        human.GetComponent<SpriteRenderer>().sprite = humansSprites[UnityEngine.Random.RandomRange(0, humansSprites.Length - 1)];
+        human.GetComponent<SpriteRenderer>().sprite = humansSprites[UnityEngine.Random.RandomRange(0, humansSprites.Length)];
     }
 
     public bool IsLastWaveSpawned()
