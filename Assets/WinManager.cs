@@ -18,6 +18,7 @@ public class WinManager : MonoBehaviour
     private float decrementAmount = 0f;
     private float winPercent = 1f;
     private SpawnerManager spawnManager;
+    private bool gameEnded = false;
 
     void Start()
     {
@@ -29,11 +30,18 @@ public class WinManager : MonoBehaviour
 
     void Update()
     {
+        if(gameEnded)
+        {
+            return;
+        }
+
         ProgressBar.value = winPercent;
 
         if(winPercent <= 0f)
         {
             LaunchLoseBehaviour();
+            gameEnded = true;
+            return;
         }
 
         if(spawnManager.IsLastWaveSpawned())
@@ -49,9 +57,19 @@ public class WinManager : MonoBehaviour
                 }
             }
 
+            foreach(var e in FindObjectsOfType<AngryDanceFloorHumanAI>())
+            {
+                if(e.enabled)
+                {
+                    everyoneIsGood = false;
+                    break;
+                }
+            }
+
             if(everyoneIsGood)
             {
                 LaunchWinBehaviour();
+                gameEnded = true;
             }
         }
     }
@@ -71,11 +89,14 @@ public class WinManager : MonoBehaviour
     private void LaunchWinBehaviour()
     {
         WinScreen.enabled = true;
+        UnityEngine.Cursor.visible = true;
+        Time.timeScale = 0f;
     }
 
     private void LaunchLoseBehaviour()
     {
         LoseScreen.enabled = true;
-        Debug.Log("You lost");
+        UnityEngine.Cursor.visible = true;
+        Time.timeScale = 0f;
     }
 }

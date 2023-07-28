@@ -4,20 +4,9 @@ using UnityEngine;
 
 public class restart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void RestartLevel()
     {
         Application.LoadLevel(Application.loadedLevel);
+        Time.timeScale = 1f;
     }
 }

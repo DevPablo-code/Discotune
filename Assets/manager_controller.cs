@@ -78,7 +78,7 @@ public class manager_controller : MonoBehaviour
     private void OnVolumeChanged(float Val)
     {
         float volumeNorm = MinVolume + ((MaxVolume - MinVolume) * Val);
-        MainAS.volume = currentVolume;
+        MainAS.volume = volumeNorm;
 
         currentVolume = Mathf.Round(volumeNorm * 100f);
     }
