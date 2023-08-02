@@ -117,11 +117,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_0
+      name: People_0
       rect:
         serializedVersion: 2
         x: 9
-        y: 162
+        y: 194
         width: 14
         height: 30
       alignment: 0
@@ -131,18 +131,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0792f4704988214b8299745c93bd149
-      internalID: 1358381812
+      spriteID: 31052180a24d21a4f9e3538e8ce69b5b
+      internalID: 1563885222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_1
+      name: People_1
       rect:
         serializedVersion: 2
         x: 40
-        y: 162
+        y: 194
         width: 17
         height: 30
       alignment: 0
@@ -152,18 +152,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 223aee59c1ff29443b92d675c5d6778b
-      internalID: -1854296091
+      spriteID: 689d9cec146b00847a66982395449ce6
+      internalID: -1377182643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_2
+      name: People_2
       rect:
         serializedVersion: 2
         x: 72
-        y: 163
+        y: 195
         width: 17
         height: 26
       alignment: 0
@@ -173,18 +173,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3c56fbc2b303d14b8e9b439f5d525f3
-      internalID: -30654320
+      spriteID: 63cc2128c3a46ec4c81c3bf8dbf48e44
+      internalID: 1148886691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_3
+      name: People_3
       rect:
         serializedVersion: 2
         x: 104
-        y: 163
+        y: 195
         width: 17
         height: 26
       alignment: 0
@@ -194,18 +194,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d9ddc9766737094db12e2c193d95e4b
-      internalID: -609012538
+      spriteID: 1db1b27a8033d8b48b0fed1d1ade146a
+      internalID: 1022939700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_4
+      name: People_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 195
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90eb739df7524f6448cabfd9c20f02e8
+      internalID: 407648226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_5
       rect:
         serializedVersion: 2
         x: 9
-        y: 130
+        y: 162
         width: 14
         height: 30
       alignment: 0
@@ -215,18 +236,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a478189963689134cb4f24771790d4dd
-      internalID: -154866039
+      spriteID: 4918b1b90bb6380438f7597d220237b7
+      internalID: 249314905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_5
+      name: People_6
       rect:
         serializedVersion: 2
         x: 40
-        y: 131
+        y: 163
         width: 15
         height: 26
       alignment: 0
@@ -236,18 +257,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71ee49c0faf9bbe4b9d65c0200e9a4d8
-      internalID: -1275377053
+      spriteID: 8a0de1a33f618234a80055c7ac31d4fc
+      internalID: -1051731461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_6
+      name: People_7
       rect:
         serializedVersion: 2
         x: 72
-        y: 131
+        y: 163
         width: 15
         height: 26
       alignment: 0
@@ -257,18 +278,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4413619446e0a19489ccecde9380e5a1
-      internalID: 1723868049
+      spriteID: 5bf7488bad4ddbe47be2c13273e35e0c
+      internalID: -2076190641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_7
+      name: People_8
       rect:
         serializedVersion: 2
         x: 105
-        y: 131
+        y: 163
         width: 14
         height: 26
       alignment: 0
@@ -278,228 +299,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3465d812407d4ef45be6dae41cf3ac70
-      internalID: -834086965
+      spriteID: a89a7fae84629ed488d4976739dfbd74
+      internalID: -1101107887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_8
+      name: People_9
       rect:
         serializedVersion: 2
-        x: 9
-        y: 99
-        width: 14
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be98d0902994cff45813905f99eb9f4d
-      internalID: 774913205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 99
-        width: 14
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cdd72f675506af34496ac64b8e343124
-      internalID: -638012139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_10
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 99
-        width: 17
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c39d5bf1262834b4faccab2294a42d4f
-      internalID: 921676844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_11
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 99
-        width: 17
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af0ca113b90d85045a21ab99c51543e1
-      internalID: 1453281068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_12
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 67
-        width: 20
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47eaa891bba7d2743b3d2b0d1e91b28f
-      internalID: 611015041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_13
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 67
-        width: 14
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea020c1d8dc7ada47991c140ecc16cf6
-      internalID: 546635491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_14
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 67
-        width: 14
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c764fde14aeb3e3428e523891f2f2405
-      internalID: 531420467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_15
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 67
-        width: 14
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f35c52ace0a7594ba5907154c7e1215
-      internalID: 995189826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_16
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 35
-        width: 14
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 719ff7ad1e083b545abd2205bc1034ff
-      internalID: 147877232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_17
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 35
-        width: 20
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61a22be61c76e014fbdae7e5d97c4586
-      internalID: 1224087521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_18
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 35
+        x: 137
+        y: 162
         width: 14
         height: 28
       alignment: 0
@@ -509,14 +320,392 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9b1890e82b2ea04991ed12496fb5956
-      internalID: -318739002
+      spriteID: 4545a403d91b3754bb729ca732259e5f
+      internalID: 278494725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_19
+      name: People_10
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 131
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67fd5bee566d6eb46a50cd53b8d4ffb5
+      internalID: 642014638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_11
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 131
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5262c6bca1e7b1e49a13dbb3e80134df
+      internalID: -2081063792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 131
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8dad30e27cefd4c97d8d5cb5debd74
+      internalID: 1782237855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_13
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 131
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403642007e4f1c84c8ba129e932f32fa
+      internalID: 458739398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_14
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 131
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fc1db7c333e02488bb99d554e5c54e
+      internalID: -1145044443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_15
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 99
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47696e86395a5a46a7019c452cd6b81
+      internalID: -578763122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_16
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 99
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668ea5ed1e0351b4bb6bad71b97ec8fa
+      internalID: 1939559875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_17
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 99
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4aa2e4c8e236a4b9bd4f114a1d1f4e
+      internalID: 600546915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_18
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 99
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580bdb7097f5a7243b2ed423b8a2a2ee
+      internalID: 2125494372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_19
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 98
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0729a20ba5fc4e4cb594819264beecc
+      internalID: -1162047062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_20
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 67
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737d3f6b7e8891a41980d35d57585e22
+      internalID: -1088343364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_21
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 67
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2accc4e6884c5b94480e86b8d213f0fd
+      internalID: 1110276635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_22
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 67
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a8240e72e6bd04e951e3f89ce13688
+      internalID: 678724047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_23
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 67
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa2cc2e025487e4ba4ea9c07916f59a
+      internalID: -2118687424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_24
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 68
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb16029bc9d51548af4f3a732d8cf08
+      internalID: 1008025797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_25
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 35
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546ec8f96de9e3c4cb286d128f162897
+      internalID: -1409610093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_26
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 34
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde6c98c68d31d24ebab629b92cf70f7
+      internalID: 1605055126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_27
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 35
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f826e2afc9c8849b12b22e2aa0e889
+      internalID: 532739282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_28
       rect:
         serializedVersion: 2
         x: 104
@@ -530,14 +719,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0600fcff3e8a6c14885db0f9eb8ad8ea
-      internalID: -904961699
+      spriteID: 3d18ccbffafa8194386ba9726726cf92
+      internalID: 617555209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_20
+      name: People_29
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 35
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66315dc000bce0428df6f6e96d4b171
+      internalID: -727337758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_30
       rect:
         serializedVersion: 2
         x: 8
@@ -551,59 +761,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753105681536e5d44b2140e3c331c581
-      internalID: 2044380210
+      spriteID: bc5dcb2c40fd94741a070d3249a3d23a
+      internalID: 204888578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_21
+      name: People_31
       rect:
         serializedVersion: 2
-        x: 41
-        y: 2
-        width: 14
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fe629189325a4642ac4d53fd5a3edbc
-      internalID: 1365016094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_22
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 3
-        width: 14
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4aa6f3e64a7616d4682b79ee92bbd662
-      internalID: -2024093673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CyberpunkPackSpriteSheet_23
-      rect:
-        serializedVersion: 2
-        x: 104
+        x: 40
         y: 3
         width: 15
         height: 26
@@ -614,8 +782,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5910792c998853546a4026938dd667c1
-      internalID: -975296722
+      spriteID: cf9965338268a76459ef63ec67aaec53
+      internalID: -1398927365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_32
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 4
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9469ab2c9f536784883dc305d6bbd741
+      internalID: -608429399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_33
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 2
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56fb37a453076a4cbb28b20d10cd0fa
+      internalID: 515103939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: People_34
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 3
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98cde4a2029e1fa4f84e9a89feb47333
+      internalID: 473683497
       vertices: []
       indices: 
       edges: []
@@ -631,30 +862,41 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CyberpunkPackSpriteSheet_13: 546635491
-      CyberpunkPackSpriteSheet_19: -904961699
-      CyberpunkPackSpriteSheet_20: 2044380210
-      CyberpunkPackSpriteSheet_21: 1365016094
-      CyberpunkPackSpriteSheet_10: 921676844
-      CyberpunkPackSpriteSheet_6: 1723868049
-      CyberpunkPackSpriteSheet_4: -154866039
-      CyberpunkPackSpriteSheet_15: 995189826
-      CyberpunkPackSpriteSheet_16: 147877232
-      CyberpunkPackSpriteSheet_9: -638012139
-      CyberpunkPackSpriteSheet_22: -2024093673
-      CyberpunkPackSpriteSheet_7: -834086965
-      CyberpunkPackSpriteSheet_18: -318739002
-      CyberpunkPackSpriteSheet_8: 774913205
-      CyberpunkPackSpriteSheet_12: 611015041
-      CyberpunkPackSpriteSheet_17: 1224087521
-      CyberpunkPackSpriteSheet_23: -975296722
-      CyberpunkPackSpriteSheet_1: -1854296091
-      CyberpunkPackSpriteSheet_2: -30654320
-      CyberpunkPackSpriteSheet_11: 1453281068
-      CyberpunkPackSpriteSheet_0: 1358381812
-      CyberpunkPackSpriteSheet_14: 531420467
-      CyberpunkPackSpriteSheet_5: -1275377053
-      CyberpunkPackSpriteSheet_3: -609012538
+      People_28: 617555209
+      People_20: -1088343364
+      People_5: 249314905
+      People_11: -2081063792
+      People_4: 407648226
+      People_15: -578763122
+      People_18: 2125494372
+      People_12: 1782237855
+      People_30: 204888578
+      People_14: -1145044443
+      People_2: 1148886691
+      People_1: -1377182643
+      People_3: 1022939700
+      People_25: -1409610093
+      People_7: -2076190641
+      People_31: -1398927365
+      People_33: 515103939
+      People_23: -2118687424
+      People_29: -727337758
+      People_27: 532739282
+      People_9: 278494725
+      People_16: 1939559875
+      People_13: 458739398
+      People_10: 642014638
+      People_24: 1008025797
+      People_32: -608429399
+      People_26: 1605055126
+      People_0: 1563885222
+      People_22: 678724047
+      People_17: 600546915
+      People_21: 1110276635
+      People_6: -1051731461
+      People_8: -1101107887
+      People_34: 473683497
+      People_19: -1162047062
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
