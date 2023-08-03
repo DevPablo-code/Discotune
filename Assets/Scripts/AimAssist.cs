@@ -14,6 +14,7 @@ public class AimAssist : MonoBehaviour
     void Start()
     {
         crosshairDelay = gun.crosshairDelay;
+        gameObject.SetActive(PlayerPrefs.GetInt("AimAssist") > 0);
     }
 
     // Update is called once per frame

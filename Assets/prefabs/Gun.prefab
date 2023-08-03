@@ -281,7 +281,7 @@ MonoBehaviour:
   FlashTime: 0.2
   autoEquip: 1
   damage: 50
-  aimSensitivity: 1
+  crosshairDelay: 0
 --- !u!82 &6257752785925876320
 AudioSource:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ AudioSource:
   m_GameObject: {fileID: 6257752785925876327}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1080967295184055211, guid: e26941d9d6170c846bedf27ddeb6cfdc, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

@@ -7,6 +7,12 @@ public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     public int startScene = 1;
+    public GameObject settingsPanel;
+
+    void Start()
+    {
+        settingsPanel.SetActive(false);
+    }
 
     public void StartGame()
     {
@@ -22,5 +28,10 @@ public class MainMenu : MonoBehaviour
         #else
                 Application.Quit();
         #endif
+    }
+
+    public void OpenSettings() 
+    {
+        settingsPanel.SetActive(true);
     }
 }
