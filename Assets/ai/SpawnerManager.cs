@@ -32,6 +32,7 @@ public class SpawnerManager : MonoBehaviour
     private List<HumanRequire> RequiresList = new List<HumanRequire>();
 
     private Sprite[] humansSprites;
+    private int availableHumanSprites;
 
     private bool lastWaveSpawned = false;
 
@@ -40,6 +41,7 @@ public class SpawnerManager : MonoBehaviour
         spawnParent = new GameObject("HUMANS");
 
         humansSprites = Resources.LoadAll<Sprite>(humanSpritesheetPath);
+        availableHumanSprites = humansSprites.Length;
 
         manager_controller djC = FindObjectOfType<manager_controller>();
 
@@ -134,7 +136,14 @@ public class SpawnerManager : MonoBehaviour
         DanceFloorHumanAI human = go.GetComponent<DanceFloorHumanAI>();
         human.RequiredEnergy = r.RequiredEnergy;
         human.RequiredVolume = r.RequiredVolume;
-        human.GetComponent<SpriteRenderer>().sprite = humansSprites[UnityEngine.Random.RandomRange(0, humansSprites.Length)];
+        if(availableHumanSprites == 0) 
+        {
+            availableHumanSprites = humansSprites.Length;
+        }
+        int spriteIndex = UnityEngine.Random.RandomRange(0, availableHumanSprites);
+        human.GetComponent<SpriteRenderer>().sprite = humansSprites[spriteIndex];
+        (humansSprites[spriteIndex], humansSprites[availableHumanSprites - 1]) = (humansSprites[availableHumanSprites - 1], humansSprites[spriteIndex]);
+        availableHumanSprites--;
     }
 
     public bool IsLastWaveSpawned()
