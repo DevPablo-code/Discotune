@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5649569303465034865}
   - component: {fileID: 1307834572917154761}
   - component: {fileID: 2724337894896930166}
+  - component: {fileID: 6098675177776456608}
   m_Layer: 0
   m_Name: DanceFloorHuman
   m_TagString: Untagged
@@ -250,6 +251,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6098675177776456608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307834572917154757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.4292674, y: -1.0416667, z: 0}
+  - {x: -0.4493127, y: 1.021621, z: 0}
+  - {x: 0.41590452, y: 1.0416666, z: 0}
+  - {x: 0.42258596, y: -1.0483487, z: 0}
+  m_ShapePathHash: 58270225
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 42372
 --- !u!1 &1751832270465261803
 GameObject:
   m_ObjectHideFlags: 0
