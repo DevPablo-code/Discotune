@@ -24,8 +24,6 @@ public class manager_controller : MonoBehaviour
 
     public TrackInfo[] TrackList;
 
-    public KnobHandle EnergyHandle;
-
     public KnobHandle BPmHandle;
     public float MinBPM = 0.5f;
     public float MaxBPM = 1.5f;
@@ -39,11 +37,9 @@ public class manager_controller : MonoBehaviour
 
     void Start()
     {
-        EnergyHandle.OnKnobDrag.AddListener(OnEnergyChanged);
         BPmHandle.OnKnobDrag.AddListener(OnBPMChanged);
         VolumeHandle.OnKnobDrag.AddListener(OnVolumeChanged);
 
-        EnergyHandle.OnValueChanged(0.0f);
         BPmHandle.OnValueChanged(0.0f);
         VolumeHandle.OnValueChanged(0.0f);
     }
@@ -58,21 +54,21 @@ public class manager_controller : MonoBehaviour
         return currentEnergy;
     }
 
-    private void OnEnergyChanged(float Val)
-    {
-        MainAS.clip = TrackList[(int)Val].TrackSource;
-        MainAS.Play();
-
-        computeEnergy();
-    }
-
     private void OnBPMChanged(float Val)
     {
         float bpm = MinBPM + ((MaxBPM - MinBPM) * Val);
         MainAS.pitch = bpm;
         MainAS.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / bpm);
 
-        computeEnergy();
+        float trackVal = Mathf.Round(((Val * 100.0f) / (100.0f / (TrackList.Length - 1))));
+        var track = TrackList[(int)trackVal].TrackSource;
+        if(MainAS.clip != track)
+        {
+            MainAS.clip = TrackList[(int)trackVal].TrackSource;
+            MainAS.Play();
+        }
+
+        computeEnergy(bpm);
     }
 
     private void OnVolumeChanged(float Val)
@@ -83,13 +79,12 @@ public class manager_controller : MonoBehaviour
         currentVolume = Mathf.Round(volumeNorm * 100f);
     }
 
-    private void computeEnergy()
+    private void computeEnergy(float bpm)
     {
         //ENERGY COMPUTATION HAPPENS HERE
         //
         //
-        float bpm = MinBPM + ((MaxBPM - MinBPM) * BPmHandle.getLastKnobValue());
-        float energyTypeMult = ((EnergyKnobHandler)EnergyHandle).CurrentEnergy == TrackEnergy.LOW ? 0.5f : 1.0f;
+        float energyTypeMult = 1.0f;
         currentEnergy = Mathf.Round(bpm * 100f * energyTypeMult);
     }
 
